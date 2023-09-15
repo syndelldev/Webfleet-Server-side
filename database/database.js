@@ -11,7 +11,7 @@ const mysql = require('mysql')
 const connection = mysql.createConnection({
   host: 'Prod-db.c9kx6wffnsyr.eu-west-2.rds.amazonaws.com',
   user: 'admin',
-  database: '',
+  database: 'webfleet',
   password: 'jQaJeR4djbGVBQqLidpa'
 })
 

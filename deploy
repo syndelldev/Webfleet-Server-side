@@ -1,0 +1,4 @@
+cd /var/www/server
+sudo npm install --force
+sudo pm2 start all
+sudo systemctl restart apache2 

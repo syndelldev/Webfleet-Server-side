@@ -208,14 +208,14 @@ exports.adddriver = async (req, res) => {
     if (!err) {
 
       res.status(200).json('add Vehicle')
-      // // // console.log('The data from vehicles details table are: \n', result)
+      console.log('The data from vehicles details table are: \n', result)
     }
     else if (err.code === 'ER_DUP_ENTRY') {
 
 
       res.status(203).json("unique")
     } else {
-
+      console.log(err,"err")
       res.status(210).json(err.sqlMessage)
     }
   })
@@ -376,9 +376,9 @@ exports.vehicleUpdateId = async (req, res) => {
     (err, result) => {
       if (!err) {
         res.status(200).send(result)
-        // // // console.log('The data from users table are: \n', result)
+        console.log('The data from users table are: \n', result)
       } else {
-        // // // console.log(err)
+        console.log(err)
         res.status(400).send(err)
       }
     },
@@ -812,9 +812,12 @@ exports.addGarage = async (req, res) => {
   connection.query('INSERT INTO garage_details SET ?', [req.body], (err, result) => {
     if (!err) {
       res.status(200).json('add Vehicle')
+      console.log(err)
     }
    else {
       res.status(210).json(err.sqlMessage)
+      console.log(err)
+
     }
   })
 }

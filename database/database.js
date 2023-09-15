@@ -1,6 +1,6 @@
 /* eslint-disable */
 const mysql = require('mysql')
-require('dotenv').config()
+// require('dotenv').config()
 // for local connections
 // const connection = mysql.createConnection({
 //   host: 'localhost',
@@ -9,10 +9,10 @@ require('dotenv').config()
 // })
 
 const connection = mysql.createConnection({
-  host: process.env.Host,
-  user: process.env.user,
-  database: process.env.Database,
-  password: process.env.Password
+  host:'Prod-db.c9kx6wffnsyr.eu-west-2.rds.amazonaws.com' ,
+  user: 'admin',
+  database: 'webfleet',
+  password: 'jQaJeR4djbGVBQqLidpa'
 })
 
 

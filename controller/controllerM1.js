@@ -485,6 +485,7 @@ exports.getLogs = async (req, res) => {
     }
   })
 }
+
 //get single user from id
 exports.LoadNotificationUser = async (req, res) => {
   const id = req.params.id

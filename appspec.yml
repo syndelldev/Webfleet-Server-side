@@ -1,0 +1,18 @@
+version: 0.0
+os: linux
+files:
+  - source: /      
+    destination: /var/www/server
+    
+hooks:
+  
+  BeforeInstall:
+    - location: backup
+      timeout: 300
+      runas: ubuntu
+  
+  AfterInstall:
+    - location: deploy
+      timeout: 300
+      runas: ubuntu
+      

@@ -1,3 +1,4 @@
+pm2 stop all
 cd /var/www
 sudo rm -rf server_1
 sudo cp -r server server_1

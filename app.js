@@ -7,6 +7,7 @@ const Routes = require('./router/router')
 const imageRoutes = require('./controller/controllerUpload')
 const { scheduleCronJobs } = require('./controller/cronJobs');
 
+
 //configuration 
 app.use(express.static("./public"))
 app.use(bodyParser.json());

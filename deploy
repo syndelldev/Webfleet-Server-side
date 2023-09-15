@@ -1,0 +1,4 @@
+cd /var/www/server
+sudo npm install --ignore-scripts --no-audit
+#pm2 start all
+sudo systemctl restart apache2 

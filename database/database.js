@@ -2,18 +2,18 @@
 const mysql = require('mysql')
 
 // for local connections
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  database: 'webfleet',
-})
-
 // const connection = mysql.createConnection({
 //   host: 'localhost',
-//   user: 'sincpr5_sincpr5',
-//   database: 'sincpr5_webfleet',
-//   password: 'asdfghjklasdfghjklasdfghjkl'
+//   user: 'root',
+//   database: 'webfleet',
 // })
+
+const connection = mysql.createConnection({
+  host: 'Prod-db.c9kx6wffnsyr.eu-west-2.rds.amazonaws.com',
+  user: 'admin',
+  database: '',
+  password: 'jQaJeR4djbGVBQqLidpa'
+})
 
 
 connection.connect((err) => {

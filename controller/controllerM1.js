@@ -39,7 +39,7 @@ exports.loginAuth = async (req, res) => {
           return;
         }
         if (user.role_id === 1) {
-          res.status(203).json(Token);
+          res.status(203).json(Token);  
           console.log(user.role_id,"roll")
         }
         else if (user.role_id === 2) {

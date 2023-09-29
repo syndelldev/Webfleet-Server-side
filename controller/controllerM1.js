@@ -523,7 +523,7 @@ exports.userExist = async (req, res) => {
 //change this url to original one while deploying site
 // const url = 'https://sincprojects.com'
 // const url = 'http://localhost:3000'
-const url = 'http://13.43.59.115:8010'
+const url = 'http://13.43.59.115'
 
 
 

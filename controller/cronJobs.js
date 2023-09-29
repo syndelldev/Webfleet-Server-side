@@ -15,7 +15,7 @@ const headers = {
 const scheduleCronJobs = () => {
 
 
-const LicenseExpiry = cron.schedule('0 0 */30 * *', () => {
+const LicenseExpiry = cron.schedule('0 0 */15 * *', () => {
     connection.query(
       `SELECT driver_name AS name, license_expire_date FROM drivers_details WHERE DATEDIFF(license_expire_date, CURDATE()) <= 15`,
       (err, result) => {

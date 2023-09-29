@@ -2,7 +2,6 @@
 const express = require('express');
 const routerUpload = express.Router();
 const connection = require('../database/database')
-const axios = require('axios')
 const multer = require('multer')
 const path = require('path');
 const fs = require('fs')

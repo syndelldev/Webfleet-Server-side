@@ -39,7 +39,7 @@ exports.loginAuth = async (req, res) => {
           return;
         }
         if (user.role_id === 1) {
-          res.status(203).json(Token);
+          res.status(203).json(Token);  
           console.log(user.role_id,"roll")
         }
         else if (user.role_id === 2) {
@@ -523,7 +523,7 @@ exports.userExist = async (req, res) => {
 //change this url to original one while deploying site
 // const url = 'https://sincprojects.com'
 // const url = 'http://localhost:3000'
-const url = 'http://13.43.59.115:8010'
+const url = 'http://13.43.59.115'
 
 
 

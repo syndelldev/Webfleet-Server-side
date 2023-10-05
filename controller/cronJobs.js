@@ -1,9 +1,10 @@
 const cron = require('node-cron')
 const connection = require('../database/database')
 const axios = require('axios')
+require('dotenv').config()
 
 //headers for dvla api
-const apiKey = 'P7R3sY1OMs1rXyFxVj67EUE0z7jtNYe6DeMrrZOi';
+const apiKey = process.env.DVLA_API_KEY;
 const url = 'https://driver-vehicle-licensing.api.gov.uk/vehicle-enquiry/v1/vehicles';
 
 const headers = {

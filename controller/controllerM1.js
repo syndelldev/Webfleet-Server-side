@@ -201,9 +201,6 @@ exports.userDelete = async (req, res) => {
 //Add new Driver api ________________________________________________________________________________________
 exports.adddriver = async (req, res) => {
 
-
-
-
   connection.query('INSERT INTO drivers_details SET ?', [req.body], (err, result) => {
     if (!err) {
 
@@ -321,7 +318,7 @@ exports.CheckDeviceIdent = async (req, res) => {
         res.status(203).send(make);
       } else {
         const url = `https://flespi.io/gw/devices/${id}/messages?data=%7B%7D`;
-        const token = 'apIg827pUkRCrTYdqlyKT0DlNz7fDxkBMRIJJFWtNDV5kI6ARu8AizKVXF1q19RD';
+        const token = process.env.FLESPI_API_KEY;
         const headers = {
           Authorization: `FlespiToken ${token}`,
         };
@@ -530,7 +527,7 @@ const url = 'http://13.43.59.115'
 const AuthMail = process.env.Email
 const AuthPassword = process.env.Email_PassWord
 
-const JWT_secret = '8f9c54d9601dcf25bf0e021115e1fea278'
+const JWT_secret = process.env.JWT_SECRET
 
 //send email
 exports.sendMail = async (req, res) => {
@@ -602,7 +599,7 @@ exports.authUser = async (req, res) => {
   const sec_token = req.body.unitok
 
   try {
-    jwt.verify(jwt_token, sec_token)
+    jwt.verify(jwt_token, process.env.JWT_SECRET)
     res.status(200).json({ msg: 'done' })
   } catch (error) {
     res.status(201).json(error)

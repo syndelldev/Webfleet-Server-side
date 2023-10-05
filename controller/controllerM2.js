@@ -1,11 +1,8 @@
 /* eslint-disable */
 "use strict";
-const nodemailer = require("nodemailer");
-var jwt = require('jsonwebtoken');
 const axios = require('axios');
-const mysql = require('mysql')
 const connection = require('../database/database');
-
+require('dotenv').config()
 
 //change this url to original one while deploying site
 // const url = 'https://sincprojects.com'
@@ -425,7 +422,7 @@ exports.LoadAllVehicle = async (req, res) => {
 
 exports.DvlaRegisterNumber = async (req, res) => {
   const registrationNumber = req.params.id
-  const apiKey = 'P7R3sY1OMs1rXyFxVj67EUE0z7jtNYe6DeMrrZOi';
+  const apiKey = process.env.DVLA_API_KEY;
   const url = 'https://driver-vehicle-licensing.api.gov.uk/vehicle-enquiry/v1/vehicles';
 
   const headers = {
